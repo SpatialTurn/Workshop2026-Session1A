@@ -23,17 +23,17 @@ exercises: 30
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- Pre-existing vector datasets are available from government portals, academic repositories, and open-source platforms — you rarely need to create data from scratch.
+- Pre-existing vector datasets are available from government portals, academic repositories, and open-source platforms: you rarely need to create data from scratch.
 - Always examine a dataset's metadata before using it: understand when it was created, how it was collected, and what its limitations are.
 - Open-access datasets vary widely in quality and completeness; exploring the data carefully is as important as finding it.
 - OpenStreetMap provides a rich, continuously updated global dataset accessible both as downloads and through QGIS plugins like QuickOSM.
-- Bookmark sources relevant to your research area — a curated list of trusted repositories saves significant time at the start of future projects.
+- Bookmark sources relevant to your research area: a curated list of trusted repositories saves significant time at the start of future projects.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction: Original Data vs. Pre-Existing Data
 
-An important decision at the start of any geospatial project — whether you are making a basic reference map or conducting advanced spatial analysis — is whether you need to collect original data or whether suitable data already exists.
+An important decision at the start of any geospatial project (whether you are making a basic reference map or conducting advanced spatial analysis) is whether you need to collect original data or whether suitable data already exists.
 
 **Original data collection** is appropriate when:
 - No existing dataset covers the geographic area or time period you need
@@ -43,7 +43,7 @@ An important decision at the start of any geospatial project — whether you are
 **Pre-existing data** is appropriate when:
 - The feature type you need (political boundaries, road networks, river systems, populated places, etc.) has already been digitized and made available by a government agency, research institution, or open-source community
 - Time or resources do not permit original data collection
-- You need a large geographic extent — for example, country-level or global coverage
+- You need a large geographic extent: for example, country-level or global coverage
 
 For most common geographic features, pre-existing data exists somewhere on the web and does not need to be recreated. Knowing where to find it, and how to evaluate its quality, is one of the most practical skills a GIS practitioner can develop.
 
@@ -56,7 +56,7 @@ Before using any dataset in your project, take time to examine it critically. Op
 - **When was it created or last updated?** A road network dataset from 2005 may be unreliable for current analysis.
 - **How was it collected?** Was it digitized from satellite imagery? Surveyed in the field? Derived from crowd-sourced contributions? Each method carries different accuracy expectations.
 - **What is the spatial resolution or scale?** A dataset designed for 1:1,000,000 global mapping will look imprecise if zoomed to the neighborhood level.
-- **What do the attribute fields represent?** Read the metadata and data dictionary — field names are often cryptic codes that need interpretation.
+- **What do the attribute fields represent?** Read the metadata and data dictionary: field names are often cryptic codes that need interpretation.
 - **Are there known gaps or limitations?** Most reputable data providers document these in their metadata pages.
 
 As a rule: **explore the data before you use it.** Load it into QGIS, open the attribute table, check the geographic coverage, and compare it against a basemap or another source before building analysis or a finished map on top of it.
@@ -65,7 +65,7 @@ As a rule: **explore the data before you use it.** Load it into QGIS, open the a
 
 ## Data Source Directory
 
-The following sections organize free, publicly accessible vector data sources by category. Sources specific to your local area (city, county, or state open data portals) are not listed here but are worth bookmarking — search for `[your city or state] open data GIS`.
+The following sections organize free, publicly accessible vector data sources by category. Sources specific to your local area (city, county, or state open data portals) are not listed here but are worth bookmarking: search for `[your city or state] open data GIS`.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -99,14 +99,14 @@ OpenStreetMap (OSM) is a collaborative, open-license global map built by volunte
 |---|---|
 | [openstreetmap.org](https://www.openstreetmap.org/) | The main OSM website. You can browse the map, contribute edits, and learn about the project. |
 | [Geofabrik Downloads](https://download.geofabrik.de/) | Pre-packaged OSM data downloads organized by country and region, available in Shapefile and other common GIS formats. Best for downloading a whole country or region. |
-| [OSM Map Features Wiki](https://wiki.openstreetmap.org/wiki/Map_features) | The reference guide to OSM's tagging system — explains how features like roads, buildings, land use, and amenities are classified and coded. Essential reading before running QuickOSM queries. |
+| [OSM Map Features Wiki](https://wiki.openstreetmap.org/wiki/Map_features) | The reference guide to OSM's tagging system: explains how features like roads, buildings, land use, and amenities are classified and coded. Essential reading before running QuickOSM queries. |
 | [Humanitarian OpenStreetMap Team (HOT)](https://www.hotosm.org/en/) | A nonprofit that activates OSM mapping in response to humanitarian crises. Provides curated datasets for disaster-affected areas. |
 
 ---
 
 ### Government Data Sources
 
-Most government data portals provide data specific to their jurisdiction. The sources below cover a range of U.S. scales — city, county, federal — as well as a few of the most useful thematic federal datasets.
+Most government data portals provide data specific to their jurisdiction. The sources below cover a range of U.S. scales (city, county, federal) as well as a few of the most useful thematic federal datasets.
 
 **City and regional portals** (most major cities have something comparable):
 
@@ -138,12 +138,12 @@ These sources provide indicators relevant to global comparative research and hum
 |---|---|
 | [DHS Program Spatial Data Repository](https://spatialdata.dhsprogram.com/home/) | Geospatial data linked to Demographic and Health Survey results across low- and middle-income countries. |
 | [University of Gothenburg Quality of Government (QoG) Portal](https://www.gu.se/en/quality-government/qog-data) | Cross-national governance, corruption, and institutional quality indicators compiled from dozens of sources. |
-| [Vision of Humanity — Global Peace Index](https://www.visionofhumanity.org/maps/) | Annual country-level peace and conflict indicators with interactive and downloadable maps. |
+| [Vision of Humanity: Global Peace Index](https://www.visionofhumanity.org/maps/) | Annual country-level peace and conflict indicators with interactive and downloadable maps. |
 | [Uppsala Conflict Data Program (UCDP)](https://ucdp.uu.se/encyclopedia) | Maintained by Uppsala University; one of the most comprehensive databases of organized violence and armed conflict globally. |
 | [WHO Global Health Observatory](https://www.who.int/data/gho) | World Health Organization data on disease burden, health system capacity, and mortality globally. |
 | [World Bank World Development Indicators](https://databank.worldbank.org/source/world-development-indicators) | Comprehensive development data covering 200+ countries across economics, education, health, and environment. |
 | [Maddison Project Database (University of Groningen)](https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2020) | Long-run historical GDP and population estimates for countries worldwide, going back centuries. |
-| [Freedom House — Freedom in the World](https://freedomhouse.org/report/freedom-world) | Annual assessments of political rights and civil liberties for countries and territories. |
+| [Freedom House: Freedom in the World](https://freedomhouse.org/report/freedom-world) | Annual assessments of political rights and civil liberties for countries and territories. |
 
 ---
 
@@ -160,7 +160,7 @@ These sources provide indicators relevant to global comparative research and hum
 
 ### Evaluating Data Sources
 
-- You found two datasets covering the same topic from different providers. They do not agree — features that appear in one are missing from the other, or the boundaries differ. How do you decide which to trust?
+- You found two datasets covering the same topic from different providers. They do not agree: features that appear in one are missing from the other, or the boundaries differ. How do you decide which to trust?
 - When would you choose to download a full country dataset from Geofabrik rather than running a QuickOSM query? What are the trade-offs?
 - Think about the research or mapping work you want to do. Which two or three sources from the directory above are most relevant to your area of interest, and why?
 

@@ -7,7 +7,7 @@ exercises: 45
 :::::::::::::::::::::::::::::::::::::: questions
 
 - How do I load spatial data into QGIS?
-- How can I add different types of vector data — shapefiles, CSV files, and live OSM data — to a map?
+- How can I add different types of vector data (shapefiles, CSV files, and live OSM data) to a map?
 - How do I style and symbolize data to communicate clearly?
 - How do I build and export a finished, publication-ready map layout?
 
@@ -26,10 +26,10 @@ exercises: 45
 ::::::::::::::::::::::::::::::::::::: keypoints
 
 - QGIS can load vector data from shapefiles, GeoJSON files, geocoded CSV files, and live OpenStreetMap queries.
-- Layer order matters — drag layers so that points and polygons of interest sit above basemap layers.
+- Layer order matters: drag layers so that points and polygons of interest sit above basemap layers.
 - Styling choices (symbol, color, size) should serve the map's purpose, not just look decorative.
 - A complete map layout includes a title, legend, scale bar, north arrow, and data source credit.
-- Save your project frequently using `.qgz` — losing work to an unsaved session is the most common beginner mistake.
+- Save your project frequently using `.qgz`: losing work to an unsaved session is the most common beginner mistake.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -37,7 +37,7 @@ exercises: 45
 
 QGIS is a free, open-source Geographic Information System that runs on Windows, macOS, and Linux. In this episode we will go from a blank project to a finished, exported map using real spatial data.
 
-The walkthrough below covers the core workflow — loading a shapefile, styling it, and building a map layout. The exercises that follow introduce additional data types (CSV files and live OpenStreetMap data) and give you practice combining multiple layers into a single map.
+The walkthrough below covers the core workflow: loading a shapefile, styling it, and building a map layout. The exercises that follow introduce additional data types (CSV files and live OpenStreetMap data) and give you practice combining multiple layers into a single map.
 
 ---
 
@@ -60,7 +60,7 @@ Before opening QGIS, create a folder on your desktop called **Session_1a**. All 
 
 ### Step 2: Download and Add a Shapefile
 
-We will use the QGIS sample dataset for this walkthrough. Download the airport data from the [QGIS Sample Data repository](https://github.com/qgis/QGIS-Sample-Data/tree/master/qgis_sample_data) — specifically, `airports.shp` from the `shapefiles` folder.
+We will use the QGIS sample dataset for this walkthrough. Download the airport data from the [QGIS Sample Data repository](https://github.com/qgis/QGIS-Sample-Data/tree/master/qgis_sample_data), specifically, `airports.shp` from the `shapefiles` folder.
 
 A shapefile is not a single file. You must download all of the following supporting files alongside the `.shp` or the layer will not load correctly:
 
@@ -97,7 +97,7 @@ The attribute table contains the data values behind every feature on the map. To
 
 1. Right-click the `airports` layer in the Layers Panel.
 2. Select **Open Attribute Table**.
-3. You should see 76 rows — one for each airport in Alaska.
+3. You should see 76 rows: one for each airport in Alaska.
 
 Explore the columns: you will see fields for airport name, elevation, and other attributes that can be used to style the map in the next section.
 
@@ -139,7 +139,7 @@ For the airports layer, try **Single Symbol** first to get comfortable with the 
 
 ---
 
-### Step 3: Apply a Graduated Style (Optional — for numeric data)
+### Step 3: Apply a Graduated Style (Optional: for numeric data)
 
 Graduated symbology is useful when your data has a meaningful numeric field. The QGIS sample data includes an elevation CSV (`elevp`) in the `csv` folder of the same repository. Download it and try:
 
@@ -155,7 +155,7 @@ This is the same graduated approach you would use for a choropleth map of Census
 
 ## Part 3: Creating a Map Layout
 
-The **Print Layout** is QGIS's dedicated tool for building finished, export-ready maps. It is separate from the main map canvas — the main canvas is for exploration, the Print Layout is for publication.
+The **Print Layout** is QGIS's dedicated tool for building finished, export-ready maps. It is separate from the main map canvas: the main canvas is for exploration, the Print Layout is for publication.
 
 ### Step 1: Open a New Layout
 
@@ -182,7 +182,7 @@ A complete, publication-ready map must include the following elements. Use the *
 | Element | How to add | Notes |
 |---|---|---|
 | **Title** | Add Item → Add Label | Draw a text box at the top of the canvas; enter a descriptive title |
-| **Legend** | Add Item → Add Legend | QGIS auto-populates from layer names — this is why renaming layers matters |
+| **Legend** | Add Item → Add Legend | QGIS auto-populates from layer names: this is why renaming layers matters |
 | **Scale Bar** | Add Item → Add Scale Bar | Choose units appropriate for your map extent |
 | **North Arrow** | Add Item → Add North Arrow | Only strictly necessary if north is not obviously up |
 | **Data credit / metadata** | Add Item → Add Label | Add at the bottom: your name, data sources, and date |
@@ -197,7 +197,7 @@ Once you are satisfied with the layout:
 2. Accept the default settings and click **OK**.
 3. Return to the main QGIS window and save your project: **Project → Save** (`.qgz`).
 
-Below is an example of a finished map created using this workflow — Alaska airports displayed as point symbols over an OpenStreetMap basemap:
+Below is an example of a finished map created using this workflow: Alaska airports displayed as point symbols over an OpenStreetMap basemap:
 
 ![A finished map showing 76 airports in Alaska as point symbols, with a title, legend, scale bar, north arrow, and data credit.](airportmap.png "Finished Alaska Airport Map")
 
@@ -222,7 +222,7 @@ Below is an example of a finished map created using this workflow — Alaska air
 
 ### Load, Style, and Export Your First Map
 
-Complete Parts 1–3 above using the QGIS sample airport dataset. By the end you should have:
+Complete Parts 1 to 3 above using the QGIS sample airport dataset. By the end you should have:
 
 1. A QGIS project with an OpenStreetMap basemap and the airports shapefile loaded
 2. The airports layer styled with a symbol of your choice
@@ -236,11 +236,11 @@ Complete Parts 1–3 above using the QGIS sample airport dataset. By the end you
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-Real-world GIS projects rarely use a single data source. In this exercise you will combine three different data-loading methods — shapefiles, a geocoded CSV, and a live OpenStreetMap query — to build a multi-layer map.
+Real-world GIS projects rarely use a single data source. In this exercise you will combine three different data-loading methods (shapefiles, a geocoded CSV, and a live OpenStreetMap query) to build a multi-layer map.
 
 **Setup:** Create a new QGIS project saved to your Session_1a folder.
 
-#### Step 1 — Download shapefiles from Natural Earth
+#### Step 1: Download shapefiles from Natural Earth
 
 Go to [naturalearthdata.com](https://www.naturalearthdata.com) and read the homepage briefly to understand the data's purpose, scale, and reliability. Then navigate to **Downloads → Medium Scale Data** and download the following:
 
@@ -256,7 +256,7 @@ From **Physical**:
 
 Save all files to your Session_1a folder and add them to your QGIS project using **Layer → Add Layer → Add Vector Layer** (or drag the `.shp` files directly onto the Layers Panel).
 
-#### Step 2 — Add point data from a CSV file
+#### Step 2: Add point data from a CSV file
 
 Download `UFOreports_USonly_WorkshopLayer.csv` from the shared [Session 1a Google folder](https://drive.google.com/drive/folders/1Bpkl9ppNTvdLsTAILz_cLnDs5XfN6DQ1) and save it to your Session_1a folder. Then:
 
@@ -269,7 +269,7 @@ Download `UFOreports_USonly_WorkshopLayer.csv` from the shared [Session 1a Googl
 
 This creates a temporary point layer. To keep it permanently, right-click the layer → **Export → Save Features As…** and save it as a shapefile or GeoPackage.
 
-#### Step 3 — Add live data via the QuickOSM plugin
+#### Step 3: Add live data via the QuickOSM plugin
 
 OpenStreetMap contains a vast, continuously updated collection of mapped features. The **QuickOSM** plugin lets you query this data directly from within QGIS.
 
@@ -277,7 +277,7 @@ OpenStreetMap contains a vast, continuously updated collection of mapped feature
 
 1. Go to **Plugins → Manage and Install Plugins…**
 2. Search for **QuickOSM** and click **Install Plugin**.
-3. While you have the plugin manager open, also install **NextGIS QuickMapServices** — this gives you access to a wider range of basemap options beyond OpenStreetMap.
+3. While you have the plugin manager open, also install **NextGIS QuickMapServices**: this gives you access to a wider range of basemap options beyond OpenStreetMap.
 
 **Run a query:**
 
@@ -297,7 +297,7 @@ OpenStreetMap uses a structured tagging system to classify features. To explore 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-#### Step 4 — Style and build a map layout
+#### Step 4: Style and build a map layout
 
 Style each layer with a distinct color and adjust transparency as needed. Then turn off all layers except the Purdue campus polygon and the food stores layer. Open a new **Print Layout** and build a finished map that includes:
 
@@ -307,7 +307,7 @@ Style each layer with a distinct color and adjust transparency as needed. Then t
 - A north arrow
 - A data credit noting your name, data sources, and today's date
 
-#### Step 5 — Export
+#### Step 5: Export
 
 Export your layout as both a PDF and a PNG image.
 
@@ -321,7 +321,7 @@ Export your layout as both a PDF and a PNG image.
 
 Put your skills together using an external data source of your choosing. You can find a source in the previous episode [here](https://spatialturn.github.io/session1a/imageryvector.html).
 
-**Part A — Choose and evaluate a dataset**
+**Part A: Choose and evaluate a dataset**
 
 Browse a public data repository and select a dataset that interests you. Before downloading:
 
@@ -329,7 +329,7 @@ Browse a public data repository and select a dataset that interests you. Before 
 2. Find and read the metadata. Note when it was last updated, how it was collected, what geographic area it covers, and what the key attribute fields represent.
 3. Write two to three sentences summarizing whether you think this dataset is reliable and appropriate for the kind of analysis you have in mind.
 
-**Part B — Download and add to QGIS**
+**Part B: Download and add to QGIS**
 
 1. Download your chosen dataset and save it to your Session_1a folder.
 2. Add it to your QGIS project using the appropriate method:
@@ -338,7 +338,7 @@ Browse a public data repository and select a dataset that interests you. Before 
 3. Open the **Attribute Table** and explore the fields. Identify at least one field that could be used to style the layer with **Graduated** or **Categorized** symbology.
 4. Style the layer using that field.
 
-**Part C — Build a simple map layout**
+**Part C: Build a simple map layout**
 
 1. Create a **New Print Layout** and add your styled layer.
 2. Include all required map elements: title, legend, scale bar, north arrow, and data credit.
@@ -355,7 +355,7 @@ Browse a public data repository and select a dataset that interests you. Before 
 ### Reflect on Your First Map
 
 - What was the most confusing step in the workflow? How did you resolve it?
-- Look at your finished map — what would you change to make it clearer for someone unfamiliar with the area?
+- Look at your finished map: what would you change to make it clearer for someone unfamiliar with the area?
 - How does working with live OSM data (QuickOSM) differ from working with a downloaded shapefile? What are the trade-offs of each approach?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
