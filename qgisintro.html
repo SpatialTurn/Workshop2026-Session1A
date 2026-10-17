@@ -323,9 +323,9 @@ Choice</a></li>
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Exercise 1a: Acquiring Data and Making Your First Map in QGIS</h1>
-        <p>Last updated on 2026-06-28 |
+        <p>Last updated on 2026-10-17 |
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/qgisintro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/SpatialTurn/session1a/edit/main/episodes/qgisintro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
@@ -343,8 +343,8 @@ Choice</a></li>
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>How do I load spatial data into QGIS?</li>
-<li>How can I add different types of vector data — shapefiles, CSV
-files, and live OSM data — to a map?</li>
+<li>How can I add different types of vector data (shapefiles, CSV files,
+and live OSM data) to a map?</li>
 <li>How do I style and symbolize data to communicate clearly?</li>
 <li>How do I build and export a finished, publication-ready map
 layout?</li>
@@ -375,14 +375,14 @@ options</li>
 <div class="callout-content">
 <ul><li>QGIS can load vector data from shapefiles, GeoJSON files, geocoded
 CSV files, and live OpenStreetMap queries.</li>
-<li>Layer order matters — drag layers so that points and polygons of
+<li>Layer order matters: drag layers so that points and polygons of
 interest sit above basemap layers.</li>
 <li>Styling choices (symbol, color, size) should serve the map’s
 purpose, not just look decorative.</li>
 <li>A complete map layout includes a title, legend, scale bar, north
 arrow, and data source credit.</li>
-<li>Save your project frequently using <code>.qgz</code> — losing work
-to an unsaved session is the most common beginner mistake.</li>
+<li>Save your project frequently using <code>.qgz</code>: losing work to
+an unsaved session is the most common beginner mistake.</li>
 </ul></div>
 </div>
 </div>
@@ -390,7 +390,7 @@ to an unsaved session is the most common beginner mistake.</li>
 <hr class="half-width"><p>QGIS is a free, open-source Geographic Information System that runs
 on Windows, macOS, and Linux. In this episode we will go from a blank
 project to a finished, exported map using real spatial data.</p>
-<p>The walkthrough below covers the core workflow — loading a shapefile,
+<p>The walkthrough below covers the core workflow: loading a shapefile,
 styling it, and building a map layout. The exercises that follow
 introduce additional data types (CSV files and live OpenStreetMap data)
 and give you practice combining multiple layers into a single map.</p>
@@ -418,8 +418,8 @@ Panel</strong>.</li>
 <h3 id="step-2-download-and-add-a-shapefile">Step 2: Download and Add a Shapefile<a class="anchor" aria-label="anchor" href="#step-2-download-and-add-a-shapefile"></a></h3>
 <p>We will use the QGIS sample dataset for this walkthrough. Download
 the airport data from the <a href="https://github.com/qgis/QGIS-Sample-Data/tree/master/qgis_sample_data" class="external-link">QGIS
-Sample Data repository</a> — specifically, <code>airports.shp</code>
-from the <code>shapefiles</code> folder.</p>
+Sample Data repository</a>, specifically, <code>airports.shp</code> from
+the <code>shapefiles</code> folder.</p>
 <p>A shapefile is not a single file. You must download all of the
 following supporting files alongside the <code>.shp</code> or the layer
 will not load correctly:</p>
@@ -466,7 +466,7 @@ the map. To open it:</p>
 <ol style="list-style-type: decimal"><li>Right-click the <code>airports</code> layer in the Layers
 Panel.</li>
 <li>Select <strong>Open Attribute Table</strong>.</li>
-<li>You should see 76 rows — one for each airport in Alaska.</li>
+<li>You should see 76 rows: one for each airport in Alaska.</li>
 </ol><p>Explore the columns: you will see fields for airport name, elevation,
 and other attributes that can be used to style the map in the next
 section.</p>
@@ -520,7 +520,7 @@ Source → Layer Name</strong>. Give it a clear, human-readable name
 before building your layout.</p>
 <hr></div>
 <div class="section level3">
-<h3 id="step-3-apply-a-graduated-style-optional-for-numeric-data">Step 3: Apply a Graduated Style (Optional — for numeric data)<a class="anchor" aria-label="anchor" href="#step-3-apply-a-graduated-style-optional-for-numeric-data"></a></h3>
+<h3 id="step-3-apply-a-graduated-style-optional-for-numeric-data">Step 3: Apply a Graduated Style (Optional: for numeric data)<a class="anchor" aria-label="anchor" href="#step-3-apply-a-graduated-style-optional-for-numeric-data"></a></h3>
 <p>Graduated symbology is useful when your data has a meaningful numeric
 field. The QGIS sample data includes an elevation CSV
 (<code>elevp</code>) in the <code>csv</code> folder of the same
@@ -537,7 +537,7 @@ map of Census data or any other continuous numeric variable.</p>
 </section><section><h2 class="section-heading" id="part-3-creating-a-map-layout">Part 3: Creating a Map Layout<a class="anchor" aria-label="anchor" href="#part-3-creating-a-map-layout"></a></h2>
 <hr class="half-width"><p>The <strong>Print Layout</strong> is QGIS’s dedicated tool for
 building finished, export-ready maps. It is separate from the main map
-canvas — the main canvas is for exploration, the Print Layout is for
+canvas: the main canvas is for exploration, the Print Layout is for
 publication.</p>
 <div class="section level3">
 <h3 id="step-1-open-a-new-layout">Step 1: Open a New Layout<a class="anchor" aria-label="anchor" href="#step-1-open-a-new-layout"></a></h3>
@@ -572,7 +572,7 @@ option to add title, legend, scale bar, and north arrow.</div>
 title</td>
 </tr><tr><td><strong>Legend</strong></td>
 <td>Add Item → Add Legend</td>
-<td>QGIS auto-populates from layer names — this is why renaming layers
+<td>QGIS auto-populates from layer names: this is why renaming layers
 matters</td>
 </tr><tr><td><strong>Scale Bar</strong></td>
 <td>Add Item → Add Scale Bar</td>
@@ -592,7 +592,7 @@ matters</td>
 <li>Accept the default settings and click <strong>OK</strong>.</li>
 <li>Return to the main QGIS window and save your project:
 <strong>Project → Save</strong> (<code>.qgz</code>).</li>
-</ol><p>Below is an example of a finished map created using this workflow —
+</ol><p>Below is an example of a finished map created using this workflow:
 Alaska airports displayed as point symbols over an OpenStreetMap
 basemap:</p>
 <figure><img src="airportmap.png" title="Finished Alaska Airport Map" alt="A finished map showing 76 airports in Alaska as point symbols, with a title, legend, scale bar, north arrow, and data credit." class="figure mx-auto d-block"><div class="figcaption">A finished map showing 76 airports in Alaska as
@@ -631,7 +631,7 @@ something specific</td>
 <div id="load-style-and-export-your-first-map" class="callout-inner">
 <h3 class="callout-title">Load, Style, and Export Your First Map</h3>
 <div class="callout-content">
-<p>Complete Parts 1–3 above using the QGIS sample airport dataset. By
+<p>Complete Parts 1 to 3 above using the QGIS sample airport dataset. By
 the end you should have:</p>
 <ol style="list-style-type: decimal"><li>A QGIS project with an OpenStreetMap basemap and the airports
 shapefile loaded</li>
@@ -651,13 +651,13 @@ legend, scale bar, north arrow, and data credit</li>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Real-world GIS projects rarely use a single data source. In this
-exercise you will combine three different data-loading methods —
-shapefiles, a geocoded CSV, and a live OpenStreetMap query — to build a
+exercise you will combine three different data-loading methods
+(shapefiles, a geocoded CSV, and a live OpenStreetMap query) to build a
 multi-layer map.</p>
 <p><strong>Setup:</strong> Create a new QGIS project saved to your
 Session_1a folder.</p>
 <div class="section level4">
-<h4 id="step-1-download-shapefiles-from-natural-earth">Step 1 — Download shapefiles from Natural Earth<a class="anchor" aria-label="anchor" href="#step-1-download-shapefiles-from-natural-earth"></a></h4>
+<h4 id="step-1-download-shapefiles-from-natural-earth">Step 1: Download shapefiles from Natural Earth<a class="anchor" aria-label="anchor" href="#step-1-download-shapefiles-from-natural-earth"></a></h4>
 <p>Go to <a href="https://www.naturalearthdata.com" class="external-link">naturalearthdata.com</a> and
 read the homepage briefly to understand the data’s purpose, scale, and
 reliability. Then navigate to <strong>Downloads → Medium Scale
@@ -673,7 +673,7 @@ project using <strong>Layer → Add Layer → Add Vector Layer</strong> (or
 drag the <code>.shp</code> files directly onto the Layers Panel).</p>
 </div>
 <div class="section level4">
-<h4 id="step-2-add-point-data-from-a-csv-file">Step 2 — Add point data from a CSV file<a class="anchor" aria-label="anchor" href="#step-2-add-point-data-from-a-csv-file"></a></h4>
+<h4 id="step-2-add-point-data-from-a-csv-file">Step 2: Add point data from a CSV file<a class="anchor" aria-label="anchor" href="#step-2-add-point-data-from-a-csv-file"></a></h4>
 <p>Download <code>UFOreports_USonly_WorkshopLayer.csv</code> from the
 shared <a href="https://drive.google.com/drive/folders/1Bpkl9ppNTvdLsTAILz_cLnDs5XfN6DQ1" class="external-link">Session
 1a Google folder</a> and save it to your Session_1a folder. Then:</p>
@@ -693,7 +693,7 @@ right-click the layer → <strong>Export → Save Features As…</strong> and
 save it as a shapefile or GeoPackage.</p>
 </div>
 <div class="section level4">
-<h4 id="step-3-add-live-data-via-the-quickosm-plugin">Step 3 — Add live data via the QuickOSM plugin<a class="anchor" aria-label="anchor" href="#step-3-add-live-data-via-the-quickosm-plugin"></a></h4>
+<h4 id="step-3-add-live-data-via-the-quickosm-plugin">Step 3: Add live data via the QuickOSM plugin<a class="anchor" aria-label="anchor" href="#step-3-add-live-data-via-the-quickosm-plugin"></a></h4>
 <p>OpenStreetMap contains a vast, continuously updated collection of
 mapped features. The <strong>QuickOSM</strong> plugin lets you query
 this data directly from within QGIS.</p>
@@ -703,7 +703,7 @@ this data directly from within QGIS.</p>
 <li>Search for <strong>QuickOSM</strong> and click <strong>Install
 Plugin</strong>.</li>
 <li>While you have the plugin manager open, also install <strong>NextGIS
-QuickMapServices</strong> — this gives you access to a wider range of
+QuickMapServices</strong>: this gives you access to a wider range of
 basemap options beyond OpenStreetMap.</li>
 </ol><p><strong>Run a query:</strong></p>
 <ol style="list-style-type: decimal"><li>Go to <strong>Vector → QuickOSM → Quick Query</strong>.</li>
@@ -735,7 +735,7 @@ Wiki</a>.</p>
 </div>
 </div>
 <div class="section level4">
-<h4 id="step-4-style-and-build-a-map-layout">Step 4 — Style and build a map layout<a class="anchor" aria-label="anchor" href="#step-4-style-and-build-a-map-layout"></a></h4>
+<h4 id="step-4-style-and-build-a-map-layout">Step 4: Style and build a map layout<a class="anchor" aria-label="anchor" href="#step-4-style-and-build-a-map-layout"></a></h4>
 <p>Style each layer with a distinct color and adjust transparency as
 needed. Then turn off all layers except the Purdue campus polygon and
 the food stores layer. Open a new <strong>Print Layout</strong> and
@@ -747,7 +747,7 @@ build a finished map that includes:</p>
 <li>A data credit noting your name, data sources, and today’s date</li>
 </ul></div>
 <div class="section level4">
-<h4 id="step-5-export">Step 5 — Export<a class="anchor" aria-label="anchor" href="#step-5-export"></a></h4>
+<h4 id="step-5-export">Step 5: Export<a class="anchor" aria-label="anchor" href="#step-5-export"></a></h4>
 <p>Export your layout as both a PDF and a PNG image.</p>
 </div>
 </div>
@@ -765,7 +765,7 @@ Choice<a class="anchor" aria-label="anchor" href="#exercise-1a-3"></a></h2>
 <div class="callout-content">
 <p>Put your skills together using an external data source of your
 choosing. You can find a source in the previous episode <a href="https://spatialturn.github.io/session1a/imageryvector.html" class="external-link">here</a>.</p>
-<p><strong>Part A — Choose and evaluate a dataset</strong></p>
+<p><strong>Part A: Choose and evaluate a dataset</strong></p>
 <p>Browse a public data repository and select a dataset that interests
 you. Before downloading:</p>
 <ol style="list-style-type: decimal"><li>Read the source’s homepage or “About” page to understand its origin,
@@ -776,7 +776,7 @@ attribute fields represent.</li>
 <li>Write two to three sentences summarizing whether you think this
 dataset is reliable and appropriate for the kind of analysis you have in
 mind.</li>
-</ol><p><strong>Part B — Download and add to QGIS</strong></p>
+</ol><p><strong>Part B: Download and add to QGIS</strong></p>
 <ol style="list-style-type: decimal"><li>Download your chosen dataset and save it to your Session_1a
 folder.</li>
 <li>Add it to your QGIS project using the appropriate method:
@@ -792,7 +792,7 @@ Identify at least one field that could be used to style the layer with
 <strong>Graduated</strong> or <strong>Categorized</strong>
 symbology.</li>
 <li>Style the layer using that field.</li>
-</ol><p><strong>Part C — Build a simple map layout</strong></p>
+</ol><p><strong>Part C: Build a simple map layout</strong></p>
 <ol style="list-style-type: decimal"><li>Create a <strong>New Print Layout</strong> and add your styled
 layer.</li>
 <li>Include all required map elements: title, legend, scale bar, north
@@ -814,7 +814,7 @@ and distinguishable.</p>
 <div class="callout-content">
 <ul><li>What was the most confusing step in the workflow? How did you
 resolve it?</li>
-<li>Look at your finished map — what would you change to make it clearer
+<li>Look at your finished map: what would you change to make it clearer
 for someone unfamiliar with the area?</li>
 <li>How does working with live OSM data (QuickOSM) differ from working
 with a downloaded shapefile? What are the trade-offs of each
@@ -823,9 +823,9 @@ approach?</li>
 </div>
 </div>
 <!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
+Links listed here can be reused across pages as [text][name].
+Add reference-style links below as needed.
+-->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="imageryvector.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -850,11 +850,11 @@ any links that you are not going to use.
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/qgisintro.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/SpatialTurn/session1a/edit/main/episodes/qgisintro.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/carpentries/workbench-template-md/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/carpentries/workbench-template-md/" class="external-link">Source</a></p>
+        | <a href="https://github.com/SpatialTurn/session1a/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/SpatialTurn/session1a/" class="external-link">Source</a></p>
         <p>
         <a href="citation.html">Cite</a>
         | <a href="mailto:ilindsay@purdue.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
@@ -876,18 +876,18 @@ any links that you are not going to use.
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://carpentries.github.io/workbench-template-md/qgisintro.html",
+  "@id": "https://SpatialTurn.github.io/session1a/qgisintro.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "QGIS, cartography, visualization, map",
+  "keywords": "QGIS, vector data, data repositories, cartography, map design, GIS",
   "name": "Exercise 1a: Acquiring Data and Making Your First Map in QGIS",
   "creativeWorkStatus": "active",
-  "url": "https://carpentries.github.io/workbench-template-md/qgisintro.html",
-  "identifier": "https://carpentries.github.io/workbench-template-md/qgisintro.html",
+  "url": "https://SpatialTurn.github.io/session1a/qgisintro.html",
+  "identifier": "https://SpatialTurn.github.io/session1a/qgisintro.html",
   "dateCreated": "2026-06-22",
-  "dateModified": "2026-06-28",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17"
 }
 
   </script><script>

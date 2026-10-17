@@ -18,30 +18,30 @@ carpentry: 'incubator'
 carpentry_description: 'Introduction to the QGIS interface, loading data, and basic cartography'
 
 # Overall title for pages.
-title: 'Working & Teaching with QGIS' # FIXME
+title: 'Working & Teaching with QGIS'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2026-06-22 # FIXME
+created: '2026-06-22'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'QGIS, cartography, visualization, map' # FIXME
+keywords: 'QGIS, vector data, data repositories, cartography, map design, GIS'
 
 # Life cycle stage of the lesson
 # refer to <https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html> for details
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'alpha' # FIXME
+life_cycle: 'alpha'
 
 # License of the lesson
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/carpentries/workbench-template-md' # FIXME
+source: 'https://github.com/SpatialTurn/session1a'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'ilindsay@purdue.edu' # FIXME
+contact: 'ilindsay@purdue.edu'
 
 # Navigation ------------------------------------------------
 #
