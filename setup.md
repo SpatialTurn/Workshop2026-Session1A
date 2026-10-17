@@ -10,7 +10,7 @@ Sessions 1a, 2a, and 3a form the **QGIS and Raster Data** track. Complete the it
 
 ### Software
 
-**QGIS Desktop (LTR)**: download and install from [https://qgis.org/download/](https://qgis.org/download/). Open QGIS once to confirm it launches. You can check out a quick guide to QGIS [here](https://spatialturn.github.io/intromoduletest/qgisintro.html).
+**QGIS Desktop (LTR)**: download and install from [https://qgis.org/download/](https://qgis.org/download/). Open QGIS once to confirm it launches. You can check out a quick guide to QGIS [here](https://spatialturn.github.io/Workshop2026-FirstSteps/qgisintro.html).
 
 ### Accounts
 

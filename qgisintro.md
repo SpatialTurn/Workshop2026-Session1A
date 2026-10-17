@@ -319,7 +319,7 @@ Export your layout as both a PDF and a PNG image.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-Put your skills together using an external data source of your choosing. You can find a source in the previous episode [here](https://spatialturn.github.io/session1a/imageryvector.html).
+Put your skills together using an external data source of your choosing. You can find a source in the previous episode [here](https://spatialturn.github.io/Workshop2026-Session1A/imageryvector.html).
 
 **Part A: Choose and evaluate a dataset**
 
