@@ -1,6 +1,6 @@
 ---
-title: "Exercise 1a: Acquiring Data and Making Your First Map in QGIS"
-teaching: 60
+title: "Exercise 1A: Acquiring Data and Making Your First Map in QGIS"
+teaching: 45
 exercises: 45
 ---
 
@@ -143,7 +143,7 @@ For the airports layer, try **Single Symbol** first to get comfortable with the 
 
 Graduated symbology is useful when your data has a meaningful numeric field. The QGIS sample data includes an elevation CSV (`elevp`) in the `csv` folder of the same repository. Download it and try:
 
-1. Load the CSV as a delimited text layer (the full method is covered in Exercise 1a.2 below).
+1. Load the CSV as a delimited text layer (the full method is covered in Exercise 1A.2 below).
 2. Open its Symbology → select **Graduated**.
 3. Choose the elevation field as the value column.
 4. Select a sequential color ramp (light to dark).
@@ -216,7 +216,7 @@ Below is an example of a finished map created using this workflow: Alaska airpor
 
 ---
 
-## Exercise 1a.1: Guided Walkthrough {#exercise-1a-1}
+## Exercise 1A.1: Guided Walkthrough {#exercise-1a-1}
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -232,7 +232,7 @@ Complete Parts 1 to 3 above using the QGIS sample airport dataset. By the end yo
 
 ---
 
-## Exercise 1a.2: Build a Multi-Layer Map of West Lafayette {#exercise-1a-2}
+## Exercise 1A.2: Build a Multi-Layer Map of West Lafayette {#exercise-1a-2}
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -258,7 +258,7 @@ Save all files to your Session_1a folder and add them to your QGIS project using
 
 #### Step 2: Add point data from a CSV file
 
-Download `UFOreports_USonly_WorkshopLayer.csv` from the shared [Session 1a Google folder](https://drive.google.com/drive/folders/1Bpkl9ppNTvdLsTAILz_cLnDs5XfN6DQ1) and save it to your Session_1a folder. Then:
+Download `UFOreports_USonly_WorkshopLayer.csv` from the shared [Session 1A Google folder](https://drive.google.com/drive/folders/1Bpkl9ppNTvdLsTAILz_cLnDs5XfN6DQ1) and save it to your Session_1a folder. Then:
 
 1. Click the **Open Data Source Manager** button in the toolbar (or **Layer → Data Source Manager**).
 2. Select **Delimited Text** in the left panel.
@@ -315,7 +315,7 @@ Export your layout as both a PDF and a PNG image.
 
 ---
 
-## Exercise 1a.3: Explore, Evaluate, and Map a Dataset of Your Choice {#exercise-1a-3}
+## Exercise 1A.3: Explore, Evaluate, and Map a Dataset of Your Choice {#exercise-1a-3}
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
