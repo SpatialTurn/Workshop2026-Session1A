@@ -1,7 +1,7 @@
 ---
 title: "Acquiring Vector Datasets from Data Repositories"
-teaching: 30
-exercises: 30
+teaching: 20
+exercises: 10
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions
