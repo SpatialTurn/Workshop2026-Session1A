@@ -51,18 +51,18 @@ Before opening QGIS, create a folder on your desktop called **Session_1a**. All 
 
 ### Step 1: Add a Basemap
 
-1. In the **Browser Panel**, click on **XYZ Tiles**.
-2. You will see two options: **Global Terrain** and **OpenStreetMap**.
-3. Right-click **OpenStreetMap** and select **Add Layer to Project**.
-4. A world map should now appear in the **Map Panel**.
+1. In the **Browser Panel**, expand **XYZ Tiles**. (If you do not see the Browser Panel, open it with
+   **View → Panels → Browser**.)
+2. Right-click **OpenStreetMap** and select **Add Layer to Project**.
+3. A world map should now appear in the **Map Panel**.
 
 ---
 
 ### Step 2: Download and Add a Shapefile
 
-We will use the QGIS sample dataset for this walkthrough. Download the airport data from the [QGIS Sample Data repository](https://github.com/qgis/QGIS-Sample-Data/tree/master/qgis_sample_data), specifically, `airports.shp` from the `shapefiles` folder.
+We will use the airports of Alaska from the QGIS sample dataset.
 
-A shapefile is not a single file. You must download all of the following supporting files alongside the `.shp` or the layer will not load correctly:
+A shapefile is not a single file. It is a set of files with the same name, and the layer only loads correctly when all of them sit together in one folder:
 
 | File | Purpose |
 |---|---|
@@ -72,14 +72,32 @@ A shapefile is not a single file. You must download all of the following support
 | `airports.shx` | Spatial index |
 | `airports.cpg` | Character encoding |
 
-Save all files to your **Session_1a** folder.
+To make this easy, the five files are packed into one zip file:
+
+1. Download [airports.zip](https://raw.githubusercontent.com/SpatialTurn/Workshop2026-Session1A/main/data/airports.zip) and save it in your **Session_1a** folder.
+2. Unzip it. On Windows, right-click the file and choose **Extract All**; on a Mac, double-click it. You now
+   have a folder called `airports` that contains the five files.
+
+(The original files are in the `shapefiles` folder of the [QGIS Sample Data repository](https://github.com/qgis/QGIS-Sample-Data/tree/master/qgis_sample_data).)
 
 To add the shapefile to your map:
 
 1. Go to **Layer → Add Layer → Add Vector Layer**.
-2. Under **Source**, click the **…** button and navigate to `airports.shp`.
+2. Under **Source**, click the **…** button, open the `airports` folder and select `airports.shp`.
 3. Click **Add**, then close the dialog.
 4. In the **Layers Panel**, drag the `airports` layer above the OpenStreetMap layer so the airport points appear on top of the basemap.
+5. Right-click the `airports` layer and choose **Zoom to Layer**. The map moves to Alaska and you should see 76 points.
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### Why does Alaska look so big?
+
+The OpenStreetMap basemap uses the Web Mercator projection, which stretches areas near the poles, so Alaska
+looks much larger than it is. The airports file itself is stored in a projection made for Alaska (NAD27 /
+Alaska Albers, EPSG:2964), and QGIS converts it on the fly so the points line up with the basemap. Nothing is
+wrong with your data.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -99,7 +117,9 @@ The attribute table contains the data values behind every feature on the map. To
 2. Select **Open Attribute Table**.
 3. You should see 76 rows: one for each airport in Alaska.
 
-Explore the columns: you will see fields for airport name, elevation, and other attributes that can be used to style the map in the next section.
+Explore the columns: `NAME` (the airport name), `ELEV` (elevation in feet), `USE` (how the airport is used:
+Civilian/Public, Military, Joint Military/Civilian or Other), and two ID fields. `USE` and `ELEV` are the fields
+you will style the map with in the next section. Click a column header to sort by it.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -126,10 +146,16 @@ QGIS offers three main styling modes:
 | Style | Use when... | Example |
 |---|---|---|
 | **Single Symbol** | All features should look the same | All airports shown as identical blue dots |
-| **Categorized** | Features belong to named groups | Airports colored by type (international, regional, private) |
-| **Graduated** | Features vary along a numeric scale | Airport symbols sized by elevation |
+| **Categorized** | Features belong to named groups | Airports colored by `USE` (Civilian/Public, Military, Joint Military/Civilian, Other) |
+| **Graduated** | Features vary along a numeric scale | Airport symbols sized by elevation (`ELEV`) |
 
 For the airports layer, try **Single Symbol** first to get comfortable with the controls. You can adjust the marker shape, size, color, and transparency from this panel.
+
+Then try **Categorized**:
+
+1. At the top of the Symbology tab, change **Single Symbol** to **Categorized**.
+2. Set **Value** to `USE`.
+3. Click **Classify**, then **Apply**. Each of the four airport uses gets its own color; double-click a symbol in the list to change it.
 
 ![The QGIS Symbology panel showing marker style, size, and color options for the airports layer.](symbology.png "QGIS Symbology Panel")
 
@@ -141,13 +167,12 @@ For the airports layer, try **Single Symbol** first to get comfortable with the 
 
 ### Step 3: Apply a Graduated Style (Optional: for numeric data)
 
-Graduated symbology is useful when your data has a meaningful numeric field. The QGIS sample data includes an elevation CSV (`elevp`) in the `csv` folder of the same repository. Download it and try:
+Graduated symbology is useful when your data has a meaningful numeric field. The airports layer has one, `ELEV` (elevation in feet), so no extra download is needed:
 
-1. Load the CSV as a delimited text layer (the full method is covered in Exercise 1A.2 below).
-2. Open its Symbology → select **Graduated**.
-3. Choose the elevation field as the value column.
-4. Select a sequential color ramp (light to dark).
-5. Adjust the number of classes and click **Apply**.
+1. Open the airports layer's **Symbology** tab and select **Graduated**.
+2. Set **Value** to `ELEV`.
+3. Set **Method** to **Size** (higher airports get bigger symbols), or keep **Color** and choose a sequential color ramp (light to dark).
+4. Set **Classes** to 5, click **Classify**, then **Apply**.
 
 This is the same graduated approach you would use for a choropleth map of Census data or any other continuous numeric variable.
 
@@ -209,6 +234,7 @@ Below is an example of a finished map created using this workflow: Alaska airpor
 |---|---|
 | Forgetting to save the project | Use Ctrl+S / Cmd+S frequently; save before every major step |
 | Data layer hidden beneath the basemap | Check layer order in the Layers Panel; drag data layers above basemaps |
+| Layer loaded but nothing appears on the map | Right-click the layer → **Zoom to Layer** |
 | Shapefile won't load | Ensure all five supporting files (`.dbf`, `.prj`, `.shx`, `.cpg`) are in the same folder as the `.shp` |
 | Legend shows code names instead of readable labels | Rename layers before building the layout via **Properties → Source → Layer Name** |
 | Map exports blank | Make sure the layout's map frame is linked to the correct map canvas |
@@ -254,7 +280,7 @@ From **Physical**:
 
 - Rivers, Lake Centerlines (line)
 
-Save all files to your Session_1a folder and add them to your QGIS project using **Layer → Add Layer → Add Vector Layer** (or drag the `.shp` files directly onto the Layers Panel).
+Each download is a `.zip` file. Save them to your Session_1a folder and unzip each one (as for the airports above), then add them to your QGIS project using **Layer → Add Layer → Add Vector Layer** (or drag the `.shp` files directly onto the Layers Panel).
 
 #### Step 2: Add point data from a CSV file
 
@@ -264,7 +290,7 @@ Download `UFOreports_USonly_WorkshopLayer.csv` from the shared [Session 1A Googl
 2. Select **Delimited Text** in the left panel.
 3. In the **File Name** field, navigate to the CSV file.
 4. Confirm that **File Format** is set to **CSV**.
-5. Verify that the **X field** and **Y field** are set to the longitude and latitude columns respectively.
+5. Verify that the **X field** and **Y field** are set to the longitude and latitude columns respectively, and that **Geometry CRS** is **EPSG:4326 - WGS 84** (latitude and longitude in degrees).
 6. Click **Add**, then close the dialog.
 
 This creates a temporary point layer. To keep it permanently, right-click the layer → **Export → Save Features As…** and save it as a shapefile or GeoPackage.
@@ -281,7 +307,7 @@ OpenStreetMap contains a vast, continuously updated collection of mapped feature
 
 **Run a query:**
 
-1. Go to **Vector → QuickOSM → Quick Query**.
+1. Go to **Vector → QuickOSM → QuickOSM…** and open the **Quick query** tab.
 2. In the **Preset** field, type `university` and select **facilities/education/universities**.
 3. In the **In** field, type `West Lafayette, IN`.
 4. Click **Run Query**. A polygon layer for Purdue University's campus should appear on your map.

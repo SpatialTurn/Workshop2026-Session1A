@@ -14,4 +14,8 @@ It is kept as it was taught at the workshop (Day 1, Session A QGIS track, part 1
 | `episodes/qgisintro.md` | Exercise 1a: Acquiring Data and Making Your First Map in QGIS |
 | `episodes/additional-reading.md` | Additional Reading |
 
+`data/airports.zip` holds the five parts of the Alaska airports shapefile from the
+[QGIS sample data](https://github.com/qgis/QGIS-Sample-Data) (added October 2026 so learners download one file
+instead of five).
+
 Contact: ilindsay@purdue.edu
