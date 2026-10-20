@@ -352,7 +352,7 @@
         
 <section id="aio-imageryvector"><p>Content from <a href="imageryvector.html">Acquiring Vector Datasets from Data Repositories</a></p>
 <hr>
-<p>Last updated on 2026-10-18 |
+<p>Last updated on 2026-10-20 |
 
         <a href="https://github.com/SpatialTurn/Workshop2026-Session1A/edit/main/episodes/imageryvector.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -518,12 +518,6 @@ use.</p>
 <td>A large, searchable collection of open datasets contributed by
 government agencies and organizations worldwide. Datasets are
 downloadable in shapefile, GeoJSON, and other formats.</td>
-</tr>
-<tr>
-<td><a href="https://geo.nyu.edu/" class="external-link">NYU Spatial Data Repository</a></td>
-<td>A curated academic geospatial repository maintained by New York
-University Libraries. Strong coverage of urban and international
-datasets.</td>
 </tr>
 <tr>
 <td><a href="https://geodata.tufts.edu/" class="external-link">GeoPortal at Tufts</a></td>
@@ -815,7 +809,7 @@ Add reference-style links below as needed.
 </div>
 </section></section><section id="aio-qgisintro"><p>Content from <a href="qgisintro.html">Exercise 1A: Acquiring Data and Making Your First Map in QGIS</a></p>
 <hr>
-<p>Last updated on 2026-10-18 |
+<p>Last updated on 2026-10-20 |
 
         <a href="https://github.com/SpatialTurn/Workshop2026-Session1A/edit/main/episodes/qgisintro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -905,10 +899,9 @@ later.</p>
 <h3 id="step-1-add-a-basemap">Step 1: Add a Basemap<a class="anchor" aria-label="anchor" href="#step-1-add-a-basemap"></a>
 </h3>
 <ol style="list-style-type: decimal">
-<li>In the <strong>Browser Panel</strong>, click on <strong>XYZ
-Tiles</strong>.</li>
-<li>You will see two options: <strong>Global Terrain</strong> and
-<strong>OpenStreetMap</strong>.</li>
+<li>In the <strong>Browser Panel</strong>, expand <strong>XYZ
+Tiles</strong>. (If you do not see the Browser Panel, open it with
+<strong>View → Panels → Browser</strong>.)</li>
 <li>Right-click <strong>OpenStreetMap</strong> and select <strong>Add
 Layer to Project</strong>.</li>
 <li>A world map should now appear in the <strong>Map
@@ -919,13 +912,10 @@ Panel</strong>.</li>
 <div class="section level3">
 <h3 id="step-2-download-and-add-a-shapefile">Step 2: Download and Add a Shapefile<a class="anchor" aria-label="anchor" href="#step-2-download-and-add-a-shapefile"></a>
 </h3>
-<p>We will use the QGIS sample dataset for this walkthrough. Download
-the airport data from the <a href="https://github.com/qgis/QGIS-Sample-Data/tree/master/qgis_sample_data" class="external-link">QGIS
-Sample Data repository</a>, specifically, <code>airports.shp</code> from
-the <code>shapefiles</code> folder.</p>
-<p>A shapefile is not a single file. You must download all of the
-following supporting files alongside the <code>.shp</code> or the layer
-will not load correctly:</p>
+<p>We will use the airports of Alaska from the QGIS sample dataset.</p>
+<p>A shapefile is not a single file. It is a set of files with the same
+name, and the layer only loads correctly when all of them sit together
+in one folder:</p>
 <table class="table">
 <thead><tr>
 <th>File</th>
@@ -954,17 +944,48 @@ will not load correctly:</p>
 </tr>
 </tbody>
 </table>
-<p>Save all files to your <strong>Session_1a</strong> folder.</p>
+<p>To make this easy, the five files are packed into one zip file:</p>
+<ol style="list-style-type: decimal">
+<li>Download <a href="https://raw.githubusercontent.com/SpatialTurn/Workshop2026-Session1A/main/data/airports.zip" class="external-link">airports.zip</a>
+and save it in your <strong>Session_1a</strong> folder.</li>
+<li>Unzip it. On Windows, right-click the file and choose
+<strong>Extract All</strong>; on a Mac, double-click it. You now have a
+folder called <code>airports</code> that contains the five files.</li>
+</ol>
+<p>(The original files are in the <code>shapefiles</code> folder of the
+<a href="https://github.com/qgis/QGIS-Sample-Data/tree/master/qgis_sample_data" class="external-link">QGIS
+Sample Data repository</a>.)</p>
 <p>To add the shapefile to your map:</p>
 <ol style="list-style-type: decimal">
 <li>Go to <strong>Layer → Add Layer → Add Vector Layer</strong>.</li>
-<li>Under <strong>Source</strong>, click the <strong>…</strong> button
-and navigate to <code>airports.shp</code>.</li>
+<li>Under <strong>Source</strong>, click the <strong>…</strong> button,
+open the <code>airports</code> folder and select
+<code>airports.shp</code>.</li>
 <li>Click <strong>Add</strong>, then close the dialog.</li>
 <li>In the <strong>Layers Panel</strong>, drag the <code>airports</code>
 layer above the OpenStreetMap layer so the airport points appear on top
 of the basemap.</li>
+<li>Right-click the <code>airports</code> layer and choose <strong>Zoom
+to Layer</strong>. The map moves to Alaska and you should see 76
+points.</li>
 </ol>
+<div id="why-does-alaska-look-so-big" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-does-alaska-look-so-big" class="callout-inner">
+<h3 class="callout-title">Why does Alaska look so big?</h3>
+<div class="callout-content">
+<p>The OpenStreetMap basemap uses the Web Mercator projection, which
+stretches areas near the poles, so Alaska looks much larger than it is.
+The airports file itself is stored in a projection made for Alaska
+(NAD27 / Alaska Albers, EPSG:2964), and QGIS converts it on the fly so
+the points line up with the basemap. Nothing is wrong with your
+data.</p>
+</div>
+</div>
+</div>
 <div id="layer-order-matters" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -992,9 +1013,12 @@ Panel.</li>
 <li>Select <strong>Open Attribute Table</strong>.</li>
 <li>You should see 76 rows: one for each airport in Alaska.</li>
 </ol>
-<p>Explore the columns: you will see fields for airport name, elevation,
-and other attributes that can be used to style the map in the next
-section.</p>
+<p>Explore the columns: <code>NAME</code> (the airport name),
+<code>ELEV</code> (elevation in feet), <code>USE</code> (how the airport
+is used: Civilian/Public, Military, Joint Military/Civilian or Other),
+and two ID fields. <code>USE</code> and <code>ELEV</code> are the fields
+you will style the map with in the next section. Click a column header
+to sort by it.</p>
 <div id="save-often" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1046,18 +1070,28 @@ tab.</p>
 <tr>
 <td><strong>Categorized</strong></td>
 <td>Features belong to named groups</td>
-<td>Airports colored by type (international, regional, private)</td>
+<td>Airports colored by <code>USE</code> (Civilian/Public, Military,
+Joint Military/Civilian, Other)</td>
 </tr>
 <tr>
 <td><strong>Graduated</strong></td>
 <td>Features vary along a numeric scale</td>
-<td>Airport symbols sized by elevation</td>
+<td>Airport symbols sized by elevation (<code>ELEV</code>)</td>
 </tr>
 </tbody>
 </table>
 <p>For the airports layer, try <strong>Single Symbol</strong> first to
 get comfortable with the controls. You can adjust the marker shape,
 size, color, and transparency from this panel.</p>
+<p>Then try <strong>Categorized</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>At the top of the Symbology tab, change <strong>Single
+Symbol</strong> to <strong>Categorized</strong>.</li>
+<li>Set <strong>Value</strong> to <code>USE</code>.</li>
+<li>Click <strong>Classify</strong>, then <strong>Apply</strong>. Each
+of the four airport uses gets its own color; double-click a symbol in
+the list to change it.</li>
+</ol>
 <figure><img src="symbology.png" title="QGIS Symbology Panel" alt="The QGIS Symbology panel showing marker style, size, and color options for the airports layer." class="figure mx-auto d-block"><div class="figcaption">The QGIS Symbology panel showing marker style,
 size, and color options for the airports layer.</div>
 </figure><p><strong>Tip:</strong> Set the Magnifier at the bottom of the Map
@@ -1072,16 +1106,17 @@ before building your layout.</p>
 <h3 id="step-3-apply-a-graduated-style-optional-for-numeric-data">Step 3: Apply a Graduated Style (Optional: for numeric data)<a class="anchor" aria-label="anchor" href="#step-3-apply-a-graduated-style-optional-for-numeric-data"></a>
 </h3>
 <p>Graduated symbology is useful when your data has a meaningful numeric
-field. The QGIS sample data includes an elevation CSV
-(<code>elevp</code>) in the <code>csv</code> folder of the same
-repository. Download it and try:</p>
+field. The airports layer has one, <code>ELEV</code> (elevation in
+feet), so no extra download is needed:</p>
 <ol style="list-style-type: decimal">
-<li>Load the CSV as a delimited text layer (the full method is covered
-in Exercise 1A.2 below).</li>
-<li>Open its Symbology → select <strong>Graduated</strong>.</li>
-<li>Choose the elevation field as the value column.</li>
-<li>Select a sequential color ramp (light to dark).</li>
-<li>Adjust the number of classes and click <strong>Apply</strong>.</li>
+<li>Open the airports layer’s <strong>Symbology</strong> tab and select
+<strong>Graduated</strong>.</li>
+<li>Set <strong>Value</strong> to <code>ELEV</code>.</li>
+<li>Set <strong>Method</strong> to <strong>Size</strong> (higher
+airports get bigger symbols), or keep <strong>Color</strong> and choose
+a sequential color ramp (light to dark).</li>
+<li>Set <strong>Classes</strong> to 5, click <strong>Classify</strong>,
+then <strong>Apply</strong>.</li>
 </ol>
 <p>This is the same graduated approach you would use for a choropleth
 map of Census data or any other continuous numeric variable.</p>
@@ -1212,6 +1247,11 @@ credit.</div>
 basemaps</td>
 </tr>
 <tr>
+<td>Layer loaded but nothing appears on the map</td>
+<td>Right-click the layer → <strong>Zoom to Layer</strong>
+</td>
+</tr>
+<tr>
 <td>Shapefile won’t load</td>
 <td>Ensure all five supporting files (<code>.dbf</code>,
 <code>.prj</code>, <code>.shx</code>, <code>.cpg</code>) are in the same
@@ -1293,9 +1333,11 @@ Data</strong> and download the following:</p>
 <ul>
 <li>Rivers, Lake Centerlines (line)</li>
 </ul>
-<p>Save all files to your Session_1a folder and add them to your QGIS
-project using <strong>Layer → Add Layer → Add Vector Layer</strong> (or
-drag the <code>.shp</code> files directly onto the Layers Panel).</p>
+<p>Each download is a <code>.zip</code> file. Save them to your
+Session_1a folder and unzip each one (as for the airports above), then
+add them to your QGIS project using <strong>Layer → Add Layer → Add
+Vector Layer</strong> (or drag the <code>.shp</code> files directly onto
+the Layers Panel).</p>
 </div>
 <div class="section level4">
 <h4 id="step-2-add-point-data-from-a-csv-file">Step 2: Add point data from a CSV file<a class="anchor" aria-label="anchor" href="#step-2-add-point-data-from-a-csv-file"></a>
@@ -1313,7 +1355,9 @@ file.</li>
 <strong>CSV</strong>.</li>
 <li>Verify that the <strong>X field</strong> and <strong>Y
 field</strong> are set to the longitude and latitude columns
-respectively.</li>
+respectively, and that <strong>Geometry CRS</strong> is
+<strong>EPSG:4326 - WGS 84</strong> (latitude and longitude in
+degrees).</li>
 <li>Click <strong>Add</strong>, then close the dialog.</li>
 </ol>
 <p>This creates a temporary point layer. To keep it permanently,
@@ -1338,7 +1382,8 @@ basemap options beyond OpenStreetMap.</li>
 </ol>
 <p><strong>Run a query:</strong></p>
 <ol style="list-style-type: decimal">
-<li>Go to <strong>Vector → QuickOSM → Quick Query</strong>.</li>
+<li>Go to <strong>Vector → QuickOSM → QuickOSM…</strong> and open the
+<strong>Quick query</strong> tab.</li>
 <li>In the <strong>Preset</strong> field, type <code>university</code>
 and select <strong>facilities/education/universities</strong>.</li>
 <li>In the <strong>In</strong> field, type
