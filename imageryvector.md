@@ -84,7 +84,6 @@ These platforms aggregate datasets from multiple providers and are a good starti
 | Source | Description |
 |---|---|
 | [Esri Open Data Hub](https://hub.arcgis.com/search) | A large, searchable collection of open datasets contributed by government agencies and organizations worldwide. Datasets are downloadable in shapefile, GeoJSON, and other formats. |
-| [NYU Spatial Data Repository](https://geo.nyu.edu/) | A curated academic geospatial repository maintained by New York University Libraries. Strong coverage of urban and international datasets. |
 | [GeoPortal at Tufts](https://geodata.tufts.edu/) | Tufts University's geospatial data repository, with strong coverage of historical and international data. |
 | [Big Ten Academic Alliance Geoportal](https://geo.btaa.org/) | A collaborative geoportal maintained by Big Ten universities, aggregating geospatial data from government and academic sources across North America. |
 | [Demographic and Health Surveys (DHS) Spatial Repository](https://spatialdata.dhsprogram.com/home/) | Spatial data tied to DHS survey results, covering health indicators across low- and middle-income countries. |
